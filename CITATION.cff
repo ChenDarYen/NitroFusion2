@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use NitroFusion2, please cite it as below."
+title: "NitroFusion2: Bringing Adversarial Loss to the Text Stream of Multimodal Diffusion Transformers"
+authors:
+  - family-names: Chen
+    given-names: Dar-Yen
+  - family-names: Song
+    given-names: Yi-Zhe
+date-released: 2026-10-29
+license: Apache-2.0
+repository-code: "https://github.com/ChenDarYen/NitroFusion2"
+url: "https://chendaryen.github.io/NitroFusion2.github.io/"
+keywords:
+  - text-to-image
+  - adversarial diffusion distillation
+  - multimodal diffusion transformer
+  - one-step generation

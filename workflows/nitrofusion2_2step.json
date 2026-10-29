@@ -1,0 +1,1316 @@
+{
+  "id": "02f1a4b0e7d2-16c9-a8e4-d9b3-e1c7a2f5",
+  "revision": 0,
+  "last_node_id": 60,
+  "last_link_id": 62,
+  "nodes": [
+    {
+      "id": 35,
+      "type": "MarkdownNote",
+      "pos": [
+        -420,
+        200
+      ],
+      "size": [
+        510,
+        780
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Model link",
+      "properties": {},
+      "widgets_values": [
+        "## Report workflow issue\n\nIf you found any issues when running this workflow, [report them here](https://github.com/ChenDarYen/NitroFusion2/issues)\n\n## Model links\n\n- [Hugging Face:ChenDY/NitroFusion2](https://huggingface.co/ChenDY/NitroFusion2)\n\n**text_encoders**\n\n- [qwen_3_4b.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors) (7.49 GB)\n\n**diffusion_models**\n\n- [nf2-bf16.safetensors](https://huggingface.co/ChenDY/NitroFusion2/resolve/main/nf2-bf16.safetensors) (12.3 GB)\n\n**loras**\n\n- [nf2-dedistill-lora.safetensors](https://huggingface.co/ChenDY/NitroFusion2/resolve/main/nf2-dedistill-lora.safetensors) (381.6 MB)\n\n**vae**\n\n- [ae.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors) (319.8 MB)\n\nTwo steps on one shared sigma table (euler, simple, shift 6). The de-distillation LoRA scale is set per step in the main block (default 0.5 on step 1, 0 on step 2). Keep cfg = 1.\n\nModel Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 text_encoders/\n│   │      └── qwen_3_4b.safetensors\n│   ├── 📂 diffusion_models/\n│   │      └── nf2-bf16.safetensors\n│   ├── 📂 loras/\n│   │      └── nf2-dedistill-lora.safetensors\n│   └── 📂 vae/\n│          └── ae.safetensors\n```\n"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 57,
+      "type": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a1f20",
+      "pos": [
+        130,
+        200
+      ],
+      "size": [
+        400,
+        470
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "prompt",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "6",
+            "text"
+          ],
+          [
+            "9",
+            "width"
+          ],
+          [
+            "9",
+            "height"
+          ],
+          [
+            "10",
+            "noise_seed"
+          ],
+          [
+            "1",
+            "unet_name"
+          ],
+          [
+            "2",
+            "strength_model"
+          ],
+          [
+            "14",
+            "strength_model"
+          ],
+          [
+            "2",
+            "lora_name"
+          ],
+          [
+            "5",
+            "clip_name"
+          ],
+          [
+            "8",
+            "vae_name"
+          ],
+          [
+            "10",
+            "control_after_generate"
+          ]
+        ],
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 60,
+      "type": "SaveImage",
+      "pos": [
+        570,
+        200
+      ],
+      "size": [
+        780,
+        660
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 62
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "NitroFusion2"
+      ]
+    }
+  ],
+  "links": [
+    [
+      62,
+      57,
+      0,
+      60,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a1f20",
+        "version": 1,
+        "state": {
+          "lastGroupId": 3,
+          "lastNodeId": 40,
+          "lastLinkId": 129,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Text to Image (NitroFusion2, 2 steps)",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -560,
+            480,
+            120,
+            260
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            1985,
+            320,
+            120,
+            60
+          ]
+        },
+        "inputs": [
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0000",
+            "name": "text",
+            "type": "STRING",
+            "linkIds": [
+              117
+            ],
+            "pos": [
+              -460,
+              500
+            ],
+            "label": "prompt"
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0001",
+            "name": "width",
+            "type": "INT",
+            "linkIds": [
+              118
+            ],
+            "pos": [
+              -460,
+              520
+            ]
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0002",
+            "name": "height",
+            "type": "INT",
+            "linkIds": [
+              119
+            ],
+            "pos": [
+              -460,
+              540
+            ]
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0003",
+            "name": "seed",
+            "type": "INT",
+            "linkIds": [
+              120,
+              121
+            ],
+            "pos": [
+              -460,
+              560
+            ]
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0004",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              122
+            ],
+            "pos": [
+              -460,
+              580
+            ]
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0005",
+            "name": "lora_scale_1",
+            "type": "FLOAT",
+            "linkIds": [
+              123
+            ],
+            "pos": [
+              -460,
+              600
+            ],
+            "label": "LoRA scale · step 1"
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0006",
+            "name": "lora_scale_2",
+            "type": "FLOAT",
+            "linkIds": [
+              124
+            ],
+            "pos": [
+              -460,
+              620
+            ],
+            "label": "LoRA scale · step 2"
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0007",
+            "name": "lora_name",
+            "type": "COMBO",
+            "linkIds": [
+              125,
+              126
+            ],
+            "pos": [
+              -460,
+              640
+            ]
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0008",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              127
+            ],
+            "pos": [
+              -460,
+              660
+            ]
+          },
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4a0009",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              128
+            ],
+            "pos": [
+              -460,
+              680
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "5f2a7c1e-3b9d-4e8a-9c61-2d7e0b4affff",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "linkIds": [
+              129
+            ],
+            "localized_name": "IMAGE",
+            "pos": [
+              0,
+              0
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 1,
+            "type": "UNETLoader",
+            "pos": [
+              30,
+              230
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 122
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  101,
+                  102
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UNETLoader",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "nf2-bf16.safetensors",
+              "default"
+            ]
+          },
+          {
+            "id": 2,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              30,
+              370
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 101
+              },
+              {
+                "localized_name": "strength_model",
+                "name": "strength_model",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "strength_model"
+                },
+                "link": 123
+              },
+              {
+                "localized_name": "lora_name",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 125
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  104
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoraLoaderModelOnly",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "nf2-dedistill-lora.safetensors",
+              0.5
+            ],
+            "title": "De-distillation LoRA · step 1"
+          },
+          {
+            "id": 14,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              30,
+              510
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 102
+              },
+              {
+                "localized_name": "strength_model",
+                "name": "strength_model",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "strength_model"
+                },
+                "link": 124
+              },
+              {
+                "localized_name": "lora_name",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 126
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  103
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoraLoaderModelOnly",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "nf2-dedistill-lora.safetensors",
+              0.0
+            ],
+            "title": "De-distillation LoRA · step 2"
+          },
+          {
+            "id": 3,
+            "type": "ModelSamplingAuraFlow",
+            "pos": [
+              1310,
+              230
+            ],
+            "size": [
+              310,
+              104
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 103
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  111
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ModelSamplingAuraFlow",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              6
+            ]
+          },
+          {
+            "id": 4,
+            "type": "ModelSamplingAuraFlow",
+            "pos": [
+              950,
+              230
+            ],
+            "size": [
+              310,
+              104
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 104
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  107
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ModelSamplingAuraFlow",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              6
+            ]
+          },
+          {
+            "id": 5,
+            "type": "CLIPLoader",
+            "pos": [
+              30,
+              650
+            ],
+            "size": [
+              270,
+              140
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 127
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  105
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "qwen_3_4b.safetensors",
+              "lumina2",
+              "default"
+            ]
+          },
+          {
+            "id": 6,
+            "type": "CLIPTextEncode",
+            "pos": [
+              400,
+              230
+            ],
+            "size": [
+              450,
+              650
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 105
+              },
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "widget": {
+                  "name": "text"
+                },
+                "link": 117
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  106,
+                  108,
+                  112
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPTextEncode",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "Latina female with thick wavy hair, harbor boats and pastel houses behind. Breezy seaside light, warm tones, cinematic close-up."
+            ]
+          },
+          {
+            "id": 7,
+            "type": "ConditioningZeroOut",
+            "pos": [
+              630,
+              960
+            ],
+            "size": [
+              225,
+              72
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "conditioning",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 106
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  109,
+                  113
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ConditioningZeroOut",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 8,
+            "type": "VAELoader",
+            "pos": [
+              30,
+              830
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 128
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  116
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "ae.safetensors"
+            ]
+          },
+          {
+            "id": 9,
+            "type": "EmptySD3LatentImage",
+            "pos": [
+              40,
+              1050
+            ],
+            "size": [
+              260,
+              170
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 118
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 119
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  110
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "EmptySD3LatentImage",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              1024,
+              1024,
+              1
+            ]
+          },
+          {
+            "id": 10,
+            "type": "KSamplerAdvanced",
+            "pos": [
+              950,
+              400
+            ],
+            "size": [
+              320,
+              400
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 107
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 108
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 109
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 110
+              },
+              {
+                "localized_name": "noise_seed",
+                "name": "noise_seed",
+                "type": "INT",
+                "widget": {
+                  "name": "noise_seed"
+                },
+                "link": 120
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  114
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSamplerAdvanced",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "enable",
+              0,
+              "randomize",
+              2,
+              1,
+              "euler",
+              "simple",
+              0,
+              1,
+              "enable"
+            ],
+            "title": "Step 1 · NitroFusion2 + de-distillation LoRA"
+          },
+          {
+            "id": 11,
+            "type": "KSamplerAdvanced",
+            "pos": [
+              1310,
+              400
+            ],
+            "size": [
+              320,
+              400
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 111
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 112
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 113
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 114
+              },
+              {
+                "localized_name": "noise_seed",
+                "name": "noise_seed",
+                "type": "INT",
+                "widget": {
+                  "name": "noise_seed"
+                },
+                "link": 121
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  115
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSamplerAdvanced",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "disable",
+              0,
+              "fixed",
+              2,
+              1,
+              "euler",
+              "simple",
+              1,
+              2,
+              "disable"
+            ],
+            "title": "Step 2 · NitroFusion2"
+          },
+          {
+            "id": 12,
+            "type": "VAEDecode",
+            "pos": [
+              1680,
+              230
+            ],
+            "size": [
+              225,
+              96
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 115
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 116
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  129
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecode",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": []
+          }
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "title": "Step2 - Image size",
+            "bounding": [
+              10,
+              980,
+              320,
+              280
+            ],
+            "color": "#3f789e",
+            "font_size": 24,
+            "flags": {}
+          },
+          {
+            "id": 2,
+            "title": "Step3 - Prompt",
+            "bounding": [
+              360,
+              130,
+              530,
+              1130
+            ],
+            "color": "#3f789e",
+            "font_size": 24,
+            "flags": {}
+          },
+          {
+            "id": 3,
+            "title": "Step1 - Load models",
+            "bounding": [
+              0,
+              130,
+              330,
+              830
+            ],
+            "color": "#3f789e",
+            "font_size": 24,
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 101,
+            "origin_id": 1,
+            "origin_slot": 0,
+            "target_id": 2,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 102,
+            "origin_id": 1,
+            "origin_slot": 0,
+            "target_id": 14,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 103,
+            "origin_id": 14,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 104,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 4,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 105,
+            "origin_id": 5,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 106,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 107,
+            "origin_id": 4,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 108,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 109,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 110,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 111,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 112,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 113,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 114,
+            "origin_id": 10,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 115,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": 12,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 116,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": 12,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 117,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 118,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 9,
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 119,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 9,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 120,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 10,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 121,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 11,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 122,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 1,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 123,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 2,
+            "target_slot": 1,
+            "type": "FLOAT"
+          },
+          {
+            "id": 124,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 14,
+            "target_slot": 1,
+            "type": "FLOAT"
+          },
+          {
+            "id": 125,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 2,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 126,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 14,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 127,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 5,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 128,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 129,
+            "origin_id": 12,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {
+          "workflowRendererVersion": "LG"
+        }
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.67,
+      "offset": [
+        840,
+        310
+      ]
+    },
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}
