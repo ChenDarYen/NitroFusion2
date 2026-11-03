@@ -9,7 +9,7 @@
 
 ## 🔥 News
 
-- [2026-10-29] NitroFusion2 is released! The checkpoint is on [Hugging Face](https://huggingface.co/ChenDY/NitroFusion2), with a [ComfyUI workflow](#comfyui), [diffusers](#diffusers) code and an [online demo](https://huggingface.co/spaces/ChenDY/NitroFusion2).
+- [2026-11-03] NitroFusion2 is released! The checkpoint is on [Hugging Face](https://huggingface.co/ChenDY/NitroFusion2), with a [ComfyUI workflow](#comfyui), [diffusers](#diffusers) code and an [online demo](https://huggingface.co/spaces/ChenDY/NitroFusion2).
 
 ## ✨ NitroFusion2
 
