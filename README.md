@@ -5,7 +5,7 @@
 [![Project Page](https://img.shields.io/badge/%F0%9F%8C%90%20Project%20Page-NitroFusion2-1f72b8?labelColor=555)](https://chendaryen.github.io/NitroFusion2.github.io/)
 ![Paper](https://img.shields.io/badge/%F0%9F%93%84%20Paper-soon-9e9e9e?labelColor=555)
 
-![](./assets/banner.jpg)
+![NitroFusion2: Bringing Adversarial Loss to the Text Stream of Multimodal Diffusion Transformers](./assets/banner.jpg)
 
 ## 🔥 News
 
