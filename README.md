@@ -3,7 +3,7 @@
 [![Checkpoint](https://img.shields.io/badge/%F0%9F%A4%97%20Checkpoint-NitroFusion2-ffc107?labelColor=555)](https://huggingface.co/ChenDY/NitroFusion2)
 [![Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Demo-NitroFusion2-ff7a00?labelColor=555)](https://huggingface.co/spaces/ChenDY/NitroFusion2)
 [![Project Page](https://img.shields.io/badge/%F0%9F%8C%90%20Project%20Page-NitroFusion2-1f72b8?labelColor=555)](https://chendaryen.github.io/NitroFusion2.github.io/)
-![Paper](https://img.shields.io/badge/%F0%9F%93%84%20Paper-soon-9e9e9e?labelColor=555)
+[![arXiv](https://img.shields.io/badge/arXiv-2611.05648-b31b1b?labelColor=555)](https://arxiv.org/abs/2611.05648)
 
 ![NitroFusion2: Bringing Adversarial Loss to the Text Stream of Multimodal Diffusion Transformers](./assets/banner.jpg)
 
@@ -91,15 +91,14 @@ In an MMDiT, text and image tokens move through the same attention layers, so by
 
 ## Citation
 
-The paper is coming soon. Until then, if you find NitroFusion2 useful or relevant to your research, please kindly cite this release:
+If you find NitroFusion2 useful or relevant to your research, please kindly cite our paper:
 
 ```bib
-@misc{chen2026nitrofusion2,
+@article{chen2026nitrofusion2,
     title={NitroFusion2: Bringing Adversarial Loss to the Text Stream of Multimodal Diffusion Transformers},
-    author={Dar-Yen Chen and Yi-Zhe Song},
-    year={2026},
-    howpublished={\url{https://github.com/ChenDarYen/NitroFusion2}},
-    note={Paper coming soon}
+    author={Chen, Dar-Yen and Song, Yi-Zhe},
+    journal={arXiv preprint arXiv:2611.05648},
+    year={2026}
 }
 ```
 
