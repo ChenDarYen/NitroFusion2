@@ -9,6 +9,7 @@
 
 ## 🔥 News
 
+- [2026-11-07] Thanks to [PedroMarinhoDev](https://huggingface.co/PedroMarinhoDev) for [NitroFusion2-ComfyUI](https://huggingface.co/PedroMarinhoDev/NitroFusion2-ComfyUI): int8, W6A8 and W4A8 versions are now available!
 - [2026-11-03] NitroFusion2 is released! The checkpoint is on [Hugging Face](https://huggingface.co/ChenDY/NitroFusion2), with a [ComfyUI workflow](#comfyui), [diffusers](#diffusers) code and an [online demo](https://huggingface.co/spaces/ChenDY/NitroFusion2).
 
 ## ✨ NitroFusion2
