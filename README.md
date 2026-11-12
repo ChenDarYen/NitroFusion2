@@ -9,6 +9,7 @@
 
 ## 🔥 News
 
+- [2026-11-12] [NitroFusion2-Controlnet-Union](https://huggingface.co/ChenDY/NitroFusion2-Controlnet-Union) is released! A Union ControlNet for NitroFusion2 at 1–2 steps, with [ComfyUI workflows](https://huggingface.co/ChenDY/NitroFusion2-Controlnet-Union/tree/main/workflows). Try it in the [online demo](https://huggingface.co/spaces/ChenDY/NitroFusion2).
 - [2026-11-07] Thanks to [PedroMarinhoDev](https://huggingface.co/PedroMarinhoDev) for [NitroFusion2-ComfyUI](https://huggingface.co/PedroMarinhoDev/NitroFusion2-ComfyUI): int8, W6A8 and W4A8 versions are now available!
 - [2026-11-03] NitroFusion2 is released! The checkpoint is on [Hugging Face](https://huggingface.co/ChenDY/NitroFusion2), with a [ComfyUI workflow](#comfyui), [diffusers](#diffusers) code and an [online demo](https://huggingface.co/spaces/ChenDY/NitroFusion2).
 
