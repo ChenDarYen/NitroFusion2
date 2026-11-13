@@ -83,6 +83,12 @@ image = pipe(
 image.save("example.png")
 ```
 
+## ControlNet
+
+[NitroFusion2-Controlnet-Union](https://huggingface.co/ChenDY/NitroFusion2-Controlnet-Union) is a Union ControlNet for NitroFusion2 (Canny, HED, Depth, Pose, Gray and inpainting). Weights and ComfyUI workflows are available.
+
+<p align="center"><img src="./assets/controlnet_inpaint_pose.jpg" width="70%"></p>
+
 ## Method
 
 > If this paper has one message, it is this: in an MMDiT, the text stream is no longer only conditioning. Once it reads the image, it becomes a discriminative representation, opening a new direction for adversarial diffusion distillation and allowing that discrimination to be steered toward specific aspects.
