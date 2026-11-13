@@ -28,6 +28,8 @@ NitroFusion2 is a 1–2 step text-to-image model built on [Z-Image-Turbo](https:
 
 For two steps, we recommend our de-distillation LoRA, which takes NitroFusion2 back to Z-Image-Turbo, to eliminate some artifacts. The workflow applies it at scale 0.5 on the first step, then runs NitroFusion2 alone on the second step.
 
+The 2-step workflows load the LoRA with [ComfyUI-BypassLoRA](https://github.com/ChenDarYen/ComfyUI-BypassLoRA). It applies the LoRA without merging it into the weights, which makes 2-step generation 1.5–3.5× faster. The node includes the fix from [ComfyUI PR #17408](https://github.com/Comfy-Org/ComfyUI/pull/17408) until ComfyUI ships it.
+
 We also release [GGUF](https://huggingface.co/ChenDY/NitroFusion2/tree/main) tiers from `nf2-Q2_K_4XS.gguf` (2.0 GB) to `nf2-Q8_0.gguf` (7.2 GB).
 
 GGUF workflows: [1 step](./workflows/nitrofusion2_1step_gguf.json), [2 steps](./workflows/nitrofusion2_2step_gguf.json).

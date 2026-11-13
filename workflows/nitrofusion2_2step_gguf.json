@@ -23,7 +23,7 @@
       "title": "Model link",
       "properties": {},
       "widgets_values": [
-        "## Report workflow issue\n\nIf you found any issues when running this workflow, [report them here](https://github.com/ChenDarYen/NitroFusion2/issues)\n\n## Model links\n\n- [Hugging Face:ChenDY/NitroFusion2](https://huggingface.co/ChenDY/NitroFusion2)\n\n**text_encoders**\n\n- [Qwen3-4B-Q8_0.gguf](https://huggingface.co/unsloth/Qwen3-4B-GGUF/resolve/main/Qwen3-4B-Q8_0.gguf)\n- Other tiers: [unsloth/Qwen3-4B-GGUF](https://huggingface.co/unsloth/Qwen3-4B-GGUF/tree/main)\n\n**diffusion_models**\n\n- [nf2-Q4_K_M.gguf](https://huggingface.co/ChenDY/NitroFusion2/resolve/main/nf2-Q4_K_M.gguf) (5.07 GB)\n- Other tiers, from 2.0 GB to 7.2 GB: [ChenDY/NitroFusion2](https://huggingface.co/ChenDY/NitroFusion2/tree/main)\n\n**loras**\n\n- [nf2-dedistill-lora.safetensors](https://huggingface.co/ChenDY/NitroFusion2/resolve/main/nf2-dedistill-lora.safetensors) (381.6 MB)\n\n**vae**\n\n- [ae.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors) (319.8 MB)\n\nTwo steps on one shared sigma table (euler, simple, shift 6). The de-distillation LoRA scale is set per step in the main block (default 0.5 on step 1, 0 on step 2). Keep cfg = 1.\n\nGGUF files need the [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF) custom node (install it from ComfyUI-Manager).\n\nModel Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 text_encoders/\n│   │      └── Qwen3-4B-Q8_0.gguf\n│   ├── 📂 diffusion_models/\n│   │      └── nf2-Q4_K_M.gguf\n│   ├── 📂 loras/\n│   │      └── nf2-dedistill-lora.safetensors\n│   └── 📂 vae/\n│          └── ae.safetensors\n```\n"
+        "## Report workflow issue\n\nIf you found any issues when running this workflow, [report them here](https://github.com/ChenDarYen/NitroFusion2/issues)\n\n## Model links\n\n- [Hugging Face:ChenDY/NitroFusion2](https://huggingface.co/ChenDY/NitroFusion2)\n\n**text_encoders**\n\n- [Qwen3-4B-Q8_0.gguf](https://huggingface.co/unsloth/Qwen3-4B-GGUF/resolve/main/Qwen3-4B-Q8_0.gguf)\n- Other tiers: [unsloth/Qwen3-4B-GGUF](https://huggingface.co/unsloth/Qwen3-4B-GGUF/tree/main)\n\n**diffusion_models**\n\n- [nf2-Q4_K_M.gguf](https://huggingface.co/ChenDY/NitroFusion2/resolve/main/nf2-Q4_K_M.gguf) (5.07 GB)\n- Other tiers, from 2.0 GB to 7.2 GB: [ChenDY/NitroFusion2](https://huggingface.co/ChenDY/NitroFusion2/tree/main)\n\n**loras**\n\n- [nf2-dedistill-lora.safetensors](https://huggingface.co/ChenDY/NitroFusion2/resolve/main/nf2-dedistill-lora.safetensors) (381.6 MB)\n\n**vae**\n\n- [ae.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors) (319.8 MB)\n\nTwo steps on one shared sigma table (euler, simple, shift 6). The de-distillation LoRA scale is set per step in the main block (default 0.5 on step 1, 0 on step 2). Keep cfg = 1.\n\nThe LoRA is loaded with **Load LoRA (Bypass, PR #17408, Model Only)** from [ComfyUI-BypassLoRA](https://github.com/ChenDarYen/ComfyUI-BypassLoRA), which applies it without merging it into the weights, so changing the scale between steps costs nothing (2-step generation is 1.5–3.5× faster). Install it with `git clone https://github.com/ChenDarYen/ComfyUI-BypassLoRA` in `ComfyUI/custom_nodes`, or with Install via Git URL in ComfyUI-Manager.\n\nGGUF files need the [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF) custom node (install it from ComfyUI-Manager).\n\nModel Storage Location\n\n```\n📂 ComfyUI/\n├── 📂 models/\n│   ├── 📂 text_encoders/\n│   │      └── Qwen3-4B-Q8_0.gguf\n│   ├── 📂 diffusion_models/\n│   │      └── nf2-Q4_K_M.gguf\n│   ├── 📂 loras/\n│   │      └── nf2-dedistill-lora.safetensors\n│   └── 📂 vae/\n│          └── ae.safetensors\n```\n"
       ],
       "color": "#222",
       "bgcolor": "#000"
@@ -378,7 +378,7 @@
           },
           {
             "id": 2,
-            "type": "LoraLoaderModelOnly",
+            "type": "LoraLoaderBypassPR17408ModelOnly",
             "pos": [
               30,
               370
@@ -428,8 +428,8 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "LoraLoaderModelOnly",
-              "cnr_id": "comfy-core"
+              "Node name for S&R": "LoraLoaderBypassPR17408ModelOnly",
+              "aux_id": "ChenDarYen/ComfyUI-BypassLoRA"
             },
             "widgets_values": [
               "nf2-dedistill-lora.safetensors",
@@ -439,7 +439,7 @@
           },
           {
             "id": 14,
-            "type": "LoraLoaderModelOnly",
+            "type": "LoraLoaderBypassPR17408ModelOnly",
             "pos": [
               30,
               510
@@ -489,8 +489,8 @@
               }
             ],
             "properties": {
-              "Node name for S&R": "LoraLoaderModelOnly",
-              "cnr_id": "comfy-core"
+              "Node name for S&R": "LoraLoaderBypassPR17408ModelOnly",
+              "aux_id": "ChenDarYen/ComfyUI-BypassLoRA"
             },
             "widgets_values": [
               "nf2-dedistill-lora.safetensors",
