@@ -4,6 +4,7 @@
 [![Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Demo-NitroFusion2-ff7a00?labelColor=555)](https://huggingface.co/spaces/ChenDY/NitroFusion2)
 [![Project Page](https://img.shields.io/badge/%F0%9F%8C%90%20Project%20Page-NitroFusion2-1f72b8?labelColor=555)](https://chendaryen.github.io/NitroFusion2.github.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-2611.05648-b31b1b?labelColor=555)](https://arxiv.org/abs/2611.05648)
+[![swm cloud](https://img.shields.io/badge/swm%20cloud-ComfyUI-0F766E?labelColor=555)](https://cloud.swmgpu.com/w/samofvaani/fast-image-turbo)
 
 ![NitroFusion2: Bringing Adversarial Loss to the Text Stream of Multimodal Diffusion Transformers](./assets/banner.jpg)
 
